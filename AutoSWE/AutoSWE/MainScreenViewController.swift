@@ -22,6 +22,9 @@ class MainScreenViewController: UIViewController {
     }
     
     @IBAction func adminLogin(sender: AnyObject) {
+        performSegueWithIdentifier("toAdminLoginSegue", sender: nil)
     }
-
+    
+    @IBAction func unwindSegue(unwindSegue: UIStoryboardSegue){
+    }
 }
