@@ -10,8 +10,18 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
 
+    // MARK: - Outlets and members
+    
+    
+    // MARK: - Actions and methods
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func takeSurvey(sender: AnyObject) {
+    }
+    
+    @IBAction func adminLogin(sender: AnyObject) {
     }
 
 }
