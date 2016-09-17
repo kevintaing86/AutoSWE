@@ -13,8 +13,8 @@ class AdminLoginViewController: UIViewController {
     // MARK: - Outlets and members
     
     // MARK: - Actions and methods
-    @IBAction func cancel(sender: AnyObject) {
-        performSegueWithIdentifier("unwindToMainScreen", sender: nil)
+    @IBAction func cancel(_ sender: AnyObject) {
+        performSegue(withIdentifier: "unwindToMainScreen", sender: nil)
     }
     
     override func viewDidLoad() {

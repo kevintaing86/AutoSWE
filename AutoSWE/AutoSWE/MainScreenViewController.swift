@@ -22,13 +22,13 @@ class MainScreenViewController: UIViewController {
         self.dismissKeyboard()
     }
     
-    @IBAction func takeSurvey(sender: AnyObject) {
+    @IBAction func takeSurvey(_ sender: AnyObject) {
     }
     
-    @IBAction func adminLogin(sender: AnyObject) {
-        performSegueWithIdentifier("toAdminLoginSegue", sender: nil)
+    @IBAction func adminLogin(_ sender: AnyObject) {
+        performSegue(withIdentifier: "toAdminLoginSegue", sender: nil)
     }
     
-    @IBAction func unwindSegue(unwindSegue: UIStoryboardSegue){
+    @IBAction func unwindSegue(_ unwindSegue: UIStoryboardSegue){
     }
 }
