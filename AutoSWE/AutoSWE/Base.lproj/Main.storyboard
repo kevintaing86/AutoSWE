@@ -198,7 +198,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lwc-cL-uHj">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lwc-cL-uHj">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -288,8 +288,8 @@
                                     <constraint firstItem="QFb-Ut-gIL" firstAttribute="centerX" secondItem="TgW-xe-oAJ" secondAttribute="centerX" constant="138" id="AhI-mj-5Yi"/>
                                     <constraint firstItem="oDL-K1-1jF" firstAttribute="top" secondItem="kyy-MX-U0r" secondAttribute="bottom" constant="15" id="DMr-SV-eRl"/>
                                     <constraint firstAttribute="bottom" secondItem="eBT-oK-9MB" secondAttribute="bottom" constant="250" id="HeT-nh-kG5"/>
-                                    <constraint firstItem="pTd-Sc-lwr" firstAttribute="baseline" secondItem="eBT-oK-9MB" secondAttribute="baseline" constant="-72" id="K5J-dl-Xhr"/>
-                                    <constraint firstItem="Lwc-cL-uHj" firstAttribute="top" secondItem="pTd-Sc-lwr" secondAttribute="top" constant="-133" id="OhY-If-rxE"/>
+                                    <constraint firstItem="pTd-Sc-lwr" firstAttribute="baseline" secondItem="eBT-oK-9MB" secondAttribute="baseline" constant="-53" id="K5J-dl-Xhr"/>
+                                    <constraint firstItem="Lwc-cL-uHj" firstAttribute="top" secondItem="pTd-Sc-lwr" secondAttribute="top" constant="-152" id="OhY-If-rxE"/>
                                     <constraint firstItem="QFb-Ut-gIL" firstAttribute="baseline" secondItem="myf-sv-AZA" secondAttribute="baseline" constant="-358.5" id="QDx-rS-ffc"/>
                                     <constraint firstItem="oDL-K1-1jF" firstAttribute="leading" secondItem="kyy-MX-U0r" secondAttribute="leading" id="Swb-py-TsN"/>
                                     <constraint firstItem="eBT-oK-9MB" firstAttribute="centerX" secondItem="oDy-5M-U2S" secondAttribute="centerX" constant="66" id="Sy6-YI-46D"/>
@@ -297,7 +297,7 @@
                                     <constraint firstAttribute="trailing" secondItem="kyy-MX-U0r" secondAttribute="trailing" constant="16" id="WVB-ik-wFE"/>
                                     <constraint firstItem="kyy-MX-U0r" firstAttribute="leading" secondItem="Lwc-cL-uHj" secondAttribute="leading" id="Wv9-Ai-arS"/>
                                     <constraint firstItem="pTd-Sc-lwr" firstAttribute="centerX" secondItem="TgW-xe-oAJ" secondAttribute="centerX" id="X8v-8r-T6G"/>
-                                    <constraint firstItem="TgW-xe-oAJ" firstAttribute="centerY" secondItem="pTd-Sc-lwr" secondAttribute="centerY" constant="-220" id="ZCZ-ol-8uG"/>
+                                    <constraint firstItem="TgW-xe-oAJ" firstAttribute="centerY" secondItem="pTd-Sc-lwr" secondAttribute="centerY" constant="-239" id="ZCZ-ol-8uG"/>
                                     <constraint firstItem="eBT-oK-9MB" firstAttribute="centerX" secondItem="TgW-xe-oAJ" secondAttribute="centerX" constant="66.5" id="ZE9-By-lwB"/>
                                     <constraint firstItem="Lwc-cL-uHj" firstAttribute="leading" secondItem="oDy-5M-U2S" secondAttribute="leading" constant="16" id="dW0-fB-vdN"/>
                                     <constraint firstItem="oDL-K1-1jF" firstAttribute="trailing" secondItem="kyy-MX-U0r" secondAttribute="trailing" id="jGm-8c-clr"/>
