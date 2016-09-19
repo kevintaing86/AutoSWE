@@ -204,7 +204,7 @@
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyy-MX-U0r">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myf-sv-AZA">
                                         <rect key="frame" x="75" y="387" width="80" height="30"/>
@@ -316,16 +316,72 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="Lwc-cL-uHj" id="dFf-Uv-1io"/>
                         <outlet property="errorLabel" destination="oDL-K1-1jF" id="Hvb-H7-juK"/>
                         <outlet property="passwordTextField" destination="kyy-MX-U0r" id="bOj-Qy-XPl"/>
                         <outlet property="scrollView" destination="oDy-5M-U2S" id="O4s-Vm-3Jj"/>
-                        <outlet property="usernameTextField" destination="Lwc-cL-uHj" id="wSG-Uh-Ujq"/>
+                        <segue destination="0n3-x5-gcS" kind="show" identifier="segueToForgotPassword" id="r4L-iD-SuL"/>
+                        <segue destination="0en-eP-C9f" kind="show" identifier="segueToSignUp" id="i5o-Ub-53D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvp-eC-Tec" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="plG-ad-c1O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="348" y="152"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EMD-41-RE3">
+            <objects>
+                <viewController storyboardIdentifier="forgotPassword" id="0n3-x5-gcS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cwq-On-vvT"/>
+                        <viewControllerLayoutGuide type="bottom" id="7na-O8-HuA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FEs-8M-AHe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-V3-uuS">
+                                <frame key="frameInset" minX="41" minY="46" width="183" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ye5-wc-f1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="885.60719640179911"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="etb-jc-EOW">
+            <objects>
+                <viewController storyboardIdentifier="SignUp" id="0en-eP-C9f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GQV-ds-8Ma"/>
+                        <viewControllerLayoutGuide type="bottom" id="NNJ-67-RhH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Rn-PU-yPC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMQ-if-aMr">
+                                <frame key="frameInset" minX="58" minY="42" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e83-zk-iTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="885.60719640179911"/>
         </scene>
     </scenes>
     <resources>

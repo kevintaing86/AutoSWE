@@ -17,6 +17,7 @@ class AdminLoginViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    var userUid: String = ""
     
     // MARK: - Actions and methods
     @IBAction func cancel(_ sender: AnyObject) {
@@ -33,19 +34,21 @@ class AdminLoginViewController: UIViewController {
             (user, error) in
             
             if(error != nil){
-                print(error)
+                self.errorLabel.text = error as! String?
             }
             
             else{
-                print("I signed in")
+                self.userUid = (user?.uid)!
             }
         }
     }
     
     @IBAction func forgotPassword(_ sender: AnyObject) {
+        performSegue(withIdentifier: "segueToForgotPassword", sender: nil)
     }
     
     @IBAction func signUp(_ sender: AnyObject) {
+        performSegue(withIdentifier: "segueToSignUp", sender: nil)
     }
     
     override func viewDidLoad() {
