@@ -39,6 +39,7 @@ class AdminLoginViewController: UIViewController {
             
             else{
                 self.userUid = (user?.uid)!
+                self.performSegue(withIdentifier: "segueToAdminView", sender: nil)
             }
         }
     }
@@ -56,5 +57,13 @@ class AdminLoginViewController: UIViewController {
         errorLabel.isHidden = true
         scrollView.contentSize.height = 400
         self.dismissKeyboard()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueToAdminView"){
+            let destinationController = segue.destination as! AdminTableViewController
+            let targetController = destinationController.topViewController
+            
+        }
     }
 }

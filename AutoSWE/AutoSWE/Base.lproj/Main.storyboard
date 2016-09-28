@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hEe-Pd-tYb">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hEe-Pd-tYb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -322,12 +322,69 @@
                         <outlet property="scrollView" destination="oDy-5M-U2S" id="O4s-Vm-3Jj"/>
                         <segue destination="0n3-x5-gcS" kind="show" identifier="segueToForgotPassword" id="r4L-iD-SuL"/>
                         <segue destination="0en-eP-C9f" kind="show" identifier="segueToSignUp" id="i5o-Ub-53D"/>
+                        <segue destination="VNN-aU-pw6" kind="show" identifier="segueToAdminView" id="GEs-wO-f3J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvp-eC-Tec" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="plG-ad-c1O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="348" y="152"/>
+        </scene>
+        <!--My Surveys-->
+        <scene sceneID="bzs-Gc-XQL">
+            <objects>
+                <tableViewController id="Mm9-Be-PFD" customClass="AdminTableViewController" customModule="AutoSWE" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dmd-Xy-6MH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4Pn-DU-tHa">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pn-DU-tHa" id="e7Q-r8-ode">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mm9-Be-PFD" id="2H3-1u-KBV"/>
+                            <outlet property="delegate" destination="Mm9-Be-PFD" id="Bqh-We-9X2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Surveys" id="5K9-eZ-oNf">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="QvD-H8-d4b">
+                            <connections>
+                                <action selector="openProfile:" destination="Mm9-Be-PFD" id="6qL-Pj-FGe"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f9L-hc-eay">
+                            <connections>
+                                <action selector="addSurvey:" destination="Mm9-Be-PFD" id="ZFd-fg-qzF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFS-u5-x6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2010" y="152"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CD3-vf-1XB">
+            <objects>
+                <navigationController id="VNN-aU-pw6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v3b-Qb-BDS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mm9-Be-PFD" kind="relationship" relationship="rootViewController" id="ELq-O3-Afd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1B0-tq-KP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="152"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EMD-41-RE3">
