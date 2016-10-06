@@ -13,7 +13,7 @@ import FirebaseDatabase
 class LoadingViewController: UIViewController {
 
     var userUid = ""
-    var adminSurveys: [String]?
+    var adminSurveys: [String]!
     var ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
@@ -33,11 +33,11 @@ class LoadingViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueToLoading"){
+        if(segue.identifier == "segueToAdminView"){
             let destinationController = segue.destination as! UINavigationController
             let targetController = destinationController.topViewController as! AdminTableViewController
             
-            targetController.surveys = adminSurveys!
+            targetController.surveys = adminSurveys
             
         }
     }
