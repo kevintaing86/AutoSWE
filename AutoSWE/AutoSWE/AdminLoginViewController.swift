@@ -34,12 +34,12 @@ class AdminLoginViewController: UIViewController {
             (user, error) in
             
             if(error != nil){
-                self.errorLabel.text = error as! String?
+                self.errorLabel.text = "\(error)"
             }
             
             else{
                 self.userUid = (user?.uid)!
-                self.performSegue(withIdentifier: "segueToAdminView", sender: nil)
+                self.performSegue(withIdentifier: "segueToLoading", sender: nil)
             }
         }
     }
@@ -60,10 +60,9 @@ class AdminLoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueToAdminView"){
-            let destinationController = segue.destination as! AdminTableViewController
-            let targetController = destinationController.topViewController
-            
+        if(segue.identifier == "segueToLoading"){
+            let destinationController = segue.destination as! LoadingViewController
+            destinationController.userUid = self.userUid
         }
     }
 }

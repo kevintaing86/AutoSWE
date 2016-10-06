@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 
 class AdminTableViewController: UITableViewController {
     
     // MARK: - Outlets and Members
     var userUid: String = ""
+    var Ref = FIRDatabase.database().reference()
+    var surveys = [""]
     
     // MARK: - Actions and Methods
     @IBAction func addSurvey(_ sender: AnyObject) {
@@ -23,24 +26,38 @@ class AdminTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userUid)
+        tableView.reloadData()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(surveys)
+        return (surveys.count)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        cell.textLabel?.text = surveys[indexPath.row]
+        return cell
     }
 
 }
+
+
+
+

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -322,7 +323,7 @@
                         <outlet property="scrollView" destination="oDy-5M-U2S" id="O4s-Vm-3Jj"/>
                         <segue destination="0n3-x5-gcS" kind="show" identifier="segueToForgotPassword" id="r4L-iD-SuL"/>
                         <segue destination="0en-eP-C9f" kind="show" identifier="segueToSignUp" id="i5o-Ub-53D"/>
-                        <segue destination="VNN-aU-pw6" kind="show" identifier="segueToAdminView" id="GEs-wO-f3J"/>
+                        <segue destination="buS-pI-PqC" kind="show" identifier="segueToLoading" id="Aj2-OV-BR3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvp-eC-Tec" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,7 +340,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4Pn-DU-tHa">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="4Pn-DU-tHa">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pn-DU-tHa" id="e7Q-r8-ode">
@@ -369,6 +370,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFS-u5-x6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2010" y="152"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="HrT-et-DBS">
+            <objects>
+                <viewController storyboardIdentifier="Loading" id="buS-pI-PqC" customClass="LoadingViewController" customModule="AutoSWE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hAa-QX-zyK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jyg-jA-reb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HKK-nM-SDY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Data..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqJ-TZ-3pf">
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HqJ-TZ-3pf" firstAttribute="top" secondItem="hAa-QX-zyK" secondAttribute="bottom" constant="276" id="K2C-sY-PLG"/>
+                            <constraint firstItem="HqJ-TZ-3pf" firstAttribute="centerY" secondItem="HKK-nM-SDY" secondAttribute="centerY" id="MqH-Xq-P9b"/>
+                            <constraint firstItem="HqJ-TZ-3pf" firstAttribute="centerX" secondItem="HKK-nM-SDY" secondAttribute="centerX" id="gxQ-Fg-tzl"/>
+                            <constraint firstItem="HqJ-TZ-3pf" firstAttribute="leading" secondItem="HKK-nM-SDY" secondAttribute="leadingMargin" constant="64" id="wBw-oe-dkZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="VNN-aU-pw6" kind="show" identifier="segueToAdminView" id="dXG-MC-4gy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlz-4n-pq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="-537.48125937031489"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CD3-vf-1XB">
