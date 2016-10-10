@@ -29,7 +29,7 @@ class AdminTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) { 
         tableView.reloadData()
     }
     
@@ -45,8 +45,6 @@ class AdminTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(surveys)
         return (surveys.count)
     }
     

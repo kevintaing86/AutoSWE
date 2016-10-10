@@ -29,17 +29,22 @@ class AdminLoginViewController: UIViewController {
             errorLabel.text = "must enter an email"
             errorLabel.isHidden = false
         }
-        
-        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {
-            (user, error) in
-            
-            if(error != nil){
-                self.errorLabel.text = "\(error)"
-            }
-            
-            else{
-                self.userUid = (user?.uid)!
-                self.performSegue(withIdentifier: "segueToLoading", sender: nil)
+        else{
+            FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {
+                (user, error) in
+                
+                if(error != nil){
+                    // TODO: look up each error code and assign it to a user-readable-string
+                    //self.errorLabel.text = "\(error)"
+                    print(error!)
+                    self.errorLabel.text = "Invalid username or password"
+                    self.errorLabel.isHidden = false
+                }
+                    
+                else{
+                    self.userUid = (user?.uid)!
+                    self.performSegue(withIdentifier: "segueToLoading", sender: nil)
+                }
             }
         }
     }
