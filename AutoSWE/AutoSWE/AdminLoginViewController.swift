@@ -57,6 +57,9 @@ class AdminLoginViewController: UIViewController {
         performSegue(withIdentifier: "segueToSignUp", sender: nil)
     }
     
+    @IBAction func unwindSegue(_ unwindSegue: UIStoryboardSegue){
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
