@@ -9,5 +9,23 @@
 import Foundation
 
 class AdminModel{
+    var Uid: String!
+    var Surveys: [String]?
+    var UserEmail: String!
     
+    init(){
+        Uid = ""
+        Surveys = [""]
+        UserEmail = ""
+    }
+    
+    init (with Uid: String, Surveys: [String]?, UserEmail: String){
+        self.Uid = Uid
+        self.Surveys = Surveys
+        self.UserEmail = UserEmail
+    }
+    
+    func toFBModel() -> NSDictionary{
+        return [Uid : [["Surveys" : Surveys], ["UserEmail" : UserEmail]]]
+    }
 }

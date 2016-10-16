@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
@@ -16,6 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    var adminRef = FIRDatabase.database().reference().child("/Admin")
     
     // MARK: - Actions and methods
     @IBAction func submitCredentials(_ sender: AnyObject) {
@@ -28,7 +32,16 @@ class SignUpViewController: UIViewController {
             errorLabel.isHidden = false
         }
         else{
-            print("Ya! It kinda worked")
+            FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){
+                (user, error) in
+                if(error != nil){
+                    print("Problem signing up \(error)")
+                }
+                else{
+                    let x = AdminModel(with: (user?.uid)!, Surveys: nil, UserEmail: (user?.email)!)
+                    self.adminRef.updateChildValues(x.toFBModel() as! [AnyHashable : Any])
+                }
+            }
         }
     }
     
@@ -41,6 +54,7 @@ class SignUpViewController: UIViewController {
         self.dismissKeyboard()
         errorLabel.isHidden = true
         scrollView.contentSize.height = 400
+        
     }
 
     override func didReceiveMemoryWarning() {
