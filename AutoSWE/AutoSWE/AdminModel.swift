@@ -13,12 +13,6 @@ class AdminModel{
     var Surveys: [String]?
     var UserEmail: String!
     
-    init(){
-        Uid = ""
-        Surveys = [""]
-        UserEmail = ""
-    }
-    
     init (with Uid: String, Surveys: [String]?, UserEmail: String){
         self.Uid = Uid
         self.Surveys = Surveys
@@ -26,6 +20,12 @@ class AdminModel{
     }
     
     func toFBModel() -> NSDictionary{
-        return [Uid : [["Surveys" : Surveys], ["UserEmail" : UserEmail]]]
+        if(Surveys != nil){
+            return [Uid : [["Surveys" : Surveys], ["UserEmail" : UserEmail]]]
+        }
+        
+        else{
+            return [Uid: ["UserEmail": UserEmail]]
+        }
     }
 }

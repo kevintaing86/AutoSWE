@@ -38,9 +38,9 @@ class SignUpViewController: UIViewController {
                     print("Problem signing up \(error)")
                 }
                 else{
-                    let x = AdminModel(with: (user?.uid)!, Surveys: [""], UserEmail: (user?.email)!)
-                    
-                    self.adminRef.updateChildValues(x.toFBModel() as! [AnyHashable : Any])
+                    let x = AdminModel(with: (user?.uid)!, Surveys: nil, UserEmail: (user?.email)!)
+                    self.adminRef.updateChildValues([x.Uid: "test"])
+                    //self.adminRef.updateChildValues(x.toFBModel() as! [AnyHashable : Any])
                 }
             }
         }
