@@ -13,32 +13,29 @@ import FirebaseDatabase
 class LoadingViewController: UIViewController {
 
     var userUid = ""
-    var adminSurveys: [String]!
+    var adminSurveys: [String]?
     var ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let adminSureveyRef = ref.child("/Admins/\(userUid)/Surveys")
-        adminSureveyRef.observe(FIRDataEventType.value, with: { (snapshot) in
-            if let surveys = snapshot.value as? [String]{
-                self.adminSurveys = surveys
+        let adminRef = ref.child("/Admins/\(userUid)")
+        adminRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            if snapshot.hasChild("Surveys"){
+                self.adminSurveys = snapshot.value as? [String]
                 self.performSegue(withIdentifier: "segueToAdminView", sender: nil)
             }
             else{
-                print("Error trying to get the surveys")
+                self.performSegue(withIdentifier: "segueToAdminView", sender: nil)
             }
         })
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueToAdminView"){
+        if(segue.identifier == "segueToAdminView" && adminSurveys != nil){
             let destinationController = segue.destination as! UINavigationController
             let targetController = destinationController.topViewController as! AdminTableViewController
-            
-            targetController.surveys = adminSurveys
-            
+            targetController.surveys = adminSurveys!
         }
     }
     

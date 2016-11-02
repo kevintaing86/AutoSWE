@@ -1,10 +1,10 @@
-//
-//  AdminLoginViewController.swift
-//  AutoSWE
-//
-//  Created by Kevin Taing on 9/13/16.
-//  Copyright © 2016 Kevin Taing. All rights reserved.
-//
+////
+////  AdminLoginViewController.swift
+////  AutoSWE
+////
+////  Created by Kevin Taing on 9/13/16.
+////  Copyright © 2016 Kevin Taing. All rights reserved.
+////
 
 import UIKit
 import Firebase

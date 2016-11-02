@@ -1,10 +1,10 @@
-//
-//  SignUpViewController.swift
-//  AutoSWE
-//
-//  Created by Kevin Taing on 10/14/16.
-//  Copyright © 2016 Kevin Taing. All rights reserved.
-//
+////
+////  SignUpViewController.swift
+////  AutoSWE
+////
+////  Created by Kevin Taing on 10/14/16.
+////  Copyright © 2016 Kevin Taing. All rights reserved.
+////
 
 import UIKit
 import Firebase
@@ -19,7 +19,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    var adminRef = FIRDatabase.database().reference().child("/Admin")
+    var adminRef = FIRDatabase.database().reference().child("/Admins")
+    var adminModel: AdminModel!
     
     // MARK: - Actions and methods
     @IBAction func submitCredentials(_ sender: AnyObject) {
@@ -35,12 +36,14 @@ class SignUpViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){
                 (user, error) in
                 if(error != nil){
-                    print("Problem signing up \(error)")
+                    self.errorLabel.text = error?.localizedDescription
+                    self.errorLabel.isHidden = false
                 }
                 else{
-                    let x = AdminModel(with: (user?.uid)!, Surveys: nil, UserEmail: (user?.email)!)
-                    self.adminRef.updateChildValues([x.Uid: "test"])
-                    //self.adminRef.updateChildValues(x.toFBModel() as! [AnyHashable : Any])
+                    self.adminModel = AdminModel(with: (user?.uid)!, Surveys: nil, UserEmail: (user?.email)!)
+                    self.adminRef.updateChildValues(self.adminModel.toFBModel() as! [AnyHashable : Any])
+                    
+                    self.performSegue(withIdentifier: "segueToLoading", sender: nil)
                 }
             }
         }
@@ -62,5 +65,18 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueToLoading"){
+            let vc = segue.destination as! LoadingViewController
+            vc.userUid = adminModel.Uid
+        }
+    }
+    
     
 }
+
+
+
+
+
+

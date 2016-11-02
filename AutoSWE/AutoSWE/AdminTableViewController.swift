@@ -29,7 +29,7 @@ class AdminTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) { 
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
