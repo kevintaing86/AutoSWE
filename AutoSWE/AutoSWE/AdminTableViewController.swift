@@ -22,6 +22,7 @@ class AdminTableViewController: UITableViewController {
     }
     
     @IBAction func openProfile(_ sender: AnyObject) {
+        performSegue(withIdentifier: "showProfileOptions", sender: nil)
     }
     
     override func viewDidLoad() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A11FA17A1DA46E6A0093D866 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */; };
+		A12B7F4C1DD0E57200319D5A /* ProfileOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */; };
 		A14522CA1D8059ED0023E30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14522C91D8059ED0023E30D /* AppDelegate.swift */; };
 		A14522CF1D8059ED0023E30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14522CD1D8059ED0023E30D /* Main.storyboard */; };
 		A14522D11D8059ED0023E30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14522D01D8059ED0023E30D /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileOptionsViewController.swift; sourceTree = "<group>"; };
 		A14522C61D8059ED0023E30D /* AutoSWE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoSWE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14522C91D8059ED0023E30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A14522CE1D8059ED0023E30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */,
 				A1C85E371DABDFB300E3F581 /* NavigationController.swift */,
 				A154F9111DB1601D00DB1994 /* SignUpViewController.swift */,
+				A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,7 +261,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -273,6 +276,7 @@
 				A18EDB291D9B64B5007DE03B /* AdminTableViewController.swift in Sources */,
 				A1748E321D88720500F36539 /* UIViewControllerExtensions.swift in Sources */,
 				A1535CB91D8850FC00A6AC27 /* AdminLoginViewController.swift in Sources */,
+				A12B7F4C1DD0E57200319D5A /* ProfileOptionsViewController.swift in Sources */,
 				A1FA46441DA0A56D00657AC0 /* AdminModel.swift in Sources */,
 				A154F9121DB1601D00DB1994 /* SignUpViewController.swift in Sources */,
 				A14522CA1D8059ED0023E30D /* AppDelegate.swift in Sources */,
