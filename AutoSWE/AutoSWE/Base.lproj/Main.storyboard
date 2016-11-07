@@ -106,6 +106,7 @@
                                         <exclude reference="MNu-Nw-X7l"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="Zru-8h-em9"/>
                                         <exclude reference="3Le-Vg-O4B"/>
                                         <exclude reference="d13-5i-Oau"/>
                                         <exclude reference="s7F-Nc-uxz"/>
@@ -113,7 +114,6 @@
                                         <exclude reference="NCf-3e-qcg"/>
                                         <exclude reference="n4W-sp-zdF"/>
                                         <exclude reference="sgt-RC-HNk"/>
-                                        <exclude reference="Zru-8h-em9"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
@@ -123,6 +123,7 @@
                                         <include reference="MNu-Nw-X7l"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="Zru-8h-em9"/>
                                         <include reference="3Le-Vg-O4B"/>
                                         <include reference="d13-5i-Oau"/>
                                         <include reference="s7F-Nc-uxz"/>
@@ -130,7 +131,6 @@
                                         <include reference="NCf-3e-qcg"/>
                                         <include reference="n4W-sp-zdF"/>
                                         <include reference="sgt-RC-HNk"/>
-                                        <include reference="Zru-8h-em9"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -410,7 +410,7 @@
         <scene sceneID="CD3-vf-1XB">
             <objects>
                 <navigationController id="VNN-aU-pw6" customClass="NavigationController" customModule="AutoSWE" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v3b-Qb-BDS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="v3b-Qb-BDS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -492,21 +492,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-Xm-Agq">
-                                        <rect key="frame" x="16" y="399.5" width="80" height="30"/>
-                                        <color key="backgroundColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="3lA-Ua-dCS"/>
-                                            <constraint firstAttribute="height" constant="30" id="5w9-Ts-qhC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Submit">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="submitCredentials:" destination="0en-eP-C9f" eventType="touchUpInside" id="Fpg-kC-d4T"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vr-V0-5vv">
                                         <rect key="frame" x="16" y="326" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -527,6 +512,28 @@
                                             <action selector="cancel:" destination="0en-eP-C9f" eventType="touchUpInside" id="ufN-6z-LFt"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-Xm-Agq">
+                                        <rect key="frame" x="8" y="399" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="3lA-Ua-dCS"/>
+                                            <constraint firstAttribute="height" constant="30" id="5w9-Ts-qhC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitCredentials:" destination="0en-eP-C9f" eventType="touchUpInside" id="Fpg-kC-d4T"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*Must be approved by admin to login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lC-7d-Zv0">
+                                        <rect key="frame" x="8" y="89" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="DhW-nI-VlY" secondAttribute="bottom" constant="577" id="0Rm-HP-MMh"/>
@@ -547,7 +554,7 @@
                                     <constraint firstItem="DhW-nI-VlY" firstAttribute="centerX" secondItem="zch-Qx-nj1" secondAttribute="centerX" id="Pw4-37-ASU"/>
                                     <constraint firstAttribute="trailing" secondItem="DhW-nI-VlY" secondAttribute="trailing" constant="136" id="SKH-d4-O1A"/>
                                     <constraint firstItem="v2h-vT-2PX" firstAttribute="trailing" secondItem="qII-dU-dSY" secondAttribute="trailing" id="Sp4-2D-Ryr"/>
-                                    <constraint firstItem="y1e-Xm-Agq" firstAttribute="leading" secondItem="1Vr-V0-5vv" secondAttribute="leading" id="TJP-tA-X4F"/>
+                                    <constraint firstItem="y1e-Xm-Agq" firstAttribute="leading" secondItem="1Vr-V0-5vv" secondAttribute="leading" constant="-8" id="TJP-tA-X4F"/>
                                     <constraint firstItem="qII-dU-dSY" firstAttribute="top" secondItem="DhW-nI-VlY" secondAttribute="bottom" constant="38" id="WBd-0f-Sp8"/>
                                     <constraint firstItem="v2h-vT-2PX" firstAttribute="trailing" secondItem="zch-Qx-nj1" secondAttribute="trailing" id="ece-VN-1W9"/>
                                     <constraint firstItem="y1e-Xm-Agq" firstAttribute="baseline" secondItem="yL7-8f-CGE" secondAttribute="firstBaseline" id="xOA-f7-Z2x"/>
@@ -575,7 +582,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e83-zk-iTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zbr-Uj-euq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="756" y="885"/>
+            <point key="canvasLocation" x="756" y="884.70764617691157"/>
         </scene>
     </scenes>
     <resources>

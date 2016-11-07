@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    var adminRef = FIRDatabase.database().reference().child("/Admins")
+    var adminRequestRef = FIRDatabase.database().reference().child("/AdminRequests")
     var adminModel: AdminModel!
     
     // MARK: - Actions and methods
@@ -41,9 +41,9 @@ class SignUpViewController: UIViewController {
                 }
                 else{
                     self.adminModel = AdminModel(with: (user?.uid)!, Surveys: nil, UserEmail: (user?.email)!)
-                    self.adminRef.updateChildValues(self.adminModel.toFBModel() as! [AnyHashable : Any])
+                    self.adminRequestRef.updateChildValues(self.adminModel.toFBModel() as! [AnyHashable : Any])
                     
-                    self.performSegue(withIdentifier: "segueToLoading", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
                 }
             }
         }
@@ -64,15 +64,6 @@ class SignUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueToLoading"){
-            let vc = segue.destination as! LoadingViewController
-            vc.userUid = adminModel.Uid
-        }
-    }
-    
-    
 }
 
 
