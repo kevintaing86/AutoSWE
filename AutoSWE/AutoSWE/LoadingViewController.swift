@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
         let adminRef = ref.child("/Admins/\(userUid)")
         adminRef.observe(FIRDataEventType.value, with: { (snapshot) in
             if snapshot.hasChild("Surveys"){
-                self.adminSurveys = snapshot.value as? [String]
+                self.adminSurveys = snapshot.childSnapshot(forPath: "Surveys").value as? [String]
                 self.performSegue(withIdentifier: "segueToAdminView", sender: nil)
             }
             else{

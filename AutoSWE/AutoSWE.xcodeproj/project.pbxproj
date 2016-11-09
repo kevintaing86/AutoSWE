@@ -17,6 +17,7 @@
 		A154F9121DB1601D00DB1994 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154F9111DB1601D00DB1994 /* SignUpViewController.swift */; };
 		A162B5C91D903756007E534B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A162B5C81D903756007E534B /* GoogleService-Info.plist */; };
 		A1748E321D88720500F36539 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1748E311D88720500F36539 /* UIViewControllerExtensions.swift */; };
+		A180E9361DD3AB120043FDF0 /* SurveyTemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A180E9351DD3AB120043FDF0 /* SurveyTemplatesViewController.swift */; };
 		A18EDB291D9B64B5007DE03B /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18EDB281D9B64B5007DE03B /* AdminTableViewController.swift */; };
 		A1ADB16F1D8748E6002333B0 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ADB16E1D8748E6002333B0 /* MainScreenViewController.swift */; };
 		A1C85E381DABDFB300E3F581 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C85E371DABDFB300E3F581 /* NavigationController.swift */; };
@@ -39,6 +40,7 @@
 		A162B5C81D903756007E534B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A162B5CA1D903D2A007E534B /* AutoSWE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoSWE.entitlements; sourceTree = "<group>"; };
 		A1748E311D88720500F36539 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		A180E9351DD3AB120043FDF0 /* SurveyTemplatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTemplatesViewController.swift; sourceTree = "<group>"; };
 		A18EDB281D9B64B5007DE03B /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
 		A1ADB16E1D8748E6002333B0 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		A1C85E371DABDFB300E3F581 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				A1C85E371DABDFB300E3F581 /* NavigationController.swift */,
 				A154F9111DB1601D00DB1994 /* SignUpViewController.swift */,
 				A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */,
+				A180E9351DD3AB120043FDF0 /* SurveyTemplatesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				A18EDB291D9B64B5007DE03B /* AdminTableViewController.swift in Sources */,
 				A1748E321D88720500F36539 /* UIViewControllerExtensions.swift in Sources */,
 				A1535CB91D8850FC00A6AC27 /* AdminLoginViewController.swift in Sources */,
+				A180E9361DD3AB120043FDF0 /* SurveyTemplatesViewController.swift in Sources */,
 				A12B7F4C1DD0E57200319D5A /* ProfileOptionsViewController.swift in Sources */,
 				A1FA46441DA0A56D00657AC0 /* AdminModel.swift in Sources */,
 				A154F9121DB1601D00DB1994 /* SignUpViewController.swift in Sources */,

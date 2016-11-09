@@ -19,6 +19,7 @@ class AdminTableViewController: UITableViewController {
     
     // MARK: - Actions and Methods
     @IBAction func addSurvey(_ sender: AnyObject) {
+        performSegue(withIdentifier: "showSurveyTemplates", sender: nil)
     }
     
     @IBAction func openProfile(_ sender: AnyObject) {
