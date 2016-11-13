@@ -387,9 +387,6 @@
                                         <rect key="frame" x="151" y="481" width="39" height="37"/>
                                         <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="changeImage:" destination="rdm-tn-8JU" eventType="valueChanged" id="a1Q-Pr-cfj"/>
-                                        </connections>
                                     </pageControl>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZB-35-AJk">
                                         <rect key="frame" x="50" y="108" width="240" height="365"/>
@@ -418,6 +415,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="lBb-wd-W1B" firstAttribute="top" secondItem="9kR-Di-WVH" secondAttribute="topMargin" id="3PX-FA-gKM"/>
                                     <constraint firstItem="G2Q-vJ-pcm" firstAttribute="top" secondItem="gZB-35-AJk" secondAttribute="bottom" constant="8" symbolic="YES" id="9TN-UN-6XY"/>
@@ -442,6 +440,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="9kR-Di-WVH" id="wIy-VX-QZK"/>
                         <outlet property="pageControl" destination="G2Q-vJ-pcm" id="Fzg-mt-BwM"/>
                         <outlet property="templateImageView" destination="gZB-35-AJk" id="vJh-4D-BVr"/>
                         <outlet property="templateNameLabel" destination="mCc-vc-BUa" id="j3y-uQ-4PM"/>
@@ -553,8 +552,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="B6I-cP-JO0" kind="show" identifier="segueToAdminView" id="BW4-4P-J8f"/>
+                        <outlet property="containerView" destination="et5-hw-lbI" id="GQA-Ai-CiW"/>
                         <segue destination="geJ-yw-WgX" kind="unwind" unwindAction="unwindSegue:" id="wKw-zy-sJR"/>
+                        <segue destination="geJ-yw-WgX" kind="unwind" identifier="unwindToAdminLogin" unwindAction="unwindToAdminLogin:" id="NWP-gv-q60"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTg-6h-mxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -773,7 +773,7 @@
                         <outlet property="errorLabel" destination="1Vr-V0-5vv" id="ktQ-5w-6DB"/>
                         <outlet property="passwordTextField" destination="v2h-vT-2PX" id="G4r-nB-dUR"/>
                         <outlet property="scrollView" destination="Jss-mX-mIg" id="Ayq-cy-yRh"/>
-                        <segue destination="Zbr-Uj-euq" kind="unwind" identifier="unwindToLogin" unwindAction="unwindSegue:" id="OiZ-Ha-9d7"/>
+                        <segue destination="Zbr-Uj-euq" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToAdminLogin:" id="OiZ-Ha-9d7"/>
                         <segue destination="buS-pI-PqC" kind="show" identifier="segueToLoading" id="WOi-JD-8cs"/>
                     </connections>
                 </viewController>
@@ -787,7 +787,6 @@
         <image name="SWE_Logo" width="1361" height="683"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Aj2-OV-BR3"/>
-        <segue reference="BW4-4P-J8f"/>
+        <segue reference="WOi-JD-8cs"/>
     </inferredMetricsTieBreakers>
 </document>

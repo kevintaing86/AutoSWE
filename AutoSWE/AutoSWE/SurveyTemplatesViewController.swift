@@ -14,27 +14,51 @@ class SurveyTemplatesViewController: UIViewController {
     @IBOutlet weak var templateNameLabel: UILabel!
     @IBOutlet weak var templateImageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
+    @IBOutlet weak var containerView: UIView!
+
     
     // MARK: - Actions and methods
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
     
-    @IBAction func changeImage(_ sender: Any) {
-        pageControl.updateCurrentPageDisplay()
+    func changePageControl(swipeGesture: UISwipeGestureRecognizer) {
+        switch swipeGesture.direction{
+            case UISwipeGestureRecognizerDirection.left:
+                pageControl.currentPage += 1
+            case UISwipeGestureRecognizerDirection.right:
+                pageControl.currentPage -= 1
+            default:
+                break
+        }
+        
+        templateImageView.image = Survey_Templates[pageControl.currentPage]
+        changeNameLabel(page: pageControl.currentPage)
+    }
+    
+    func changeNameLabel(page: Int) {
+        switch page {
+        case 0:
+            templateNameLabel.text = "Student Survey"
+        case 1:
+            templateNameLabel.text = "Adult Survey"
+        case 2:
+            templateNameLabel.text = "Volunteer Survey"
+        default:
+            break
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let leftSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SurveyTemplatesViewController .changePageControl(swipeGesture:)))
+        let rightSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SurveyTemplatesViewController .changePageControl(swipeGesture:)))
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.left
+        containerView.addGestureRecognizer(leftSwipe)
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        containerView.addGestureRecognizer(rightSwipe)
         
         templateImageView.image = Survey_Templates[pageControl.currentPage]
-        // Do any additional setup after loading the view.
+        changeNameLabel(page: pageControl.currentPage)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }

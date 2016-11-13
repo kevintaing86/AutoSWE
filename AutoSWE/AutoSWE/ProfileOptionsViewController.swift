@@ -11,11 +11,12 @@ import FirebaseAuth
 
 class ProfileOptionsViewController: UIViewController {
     // MARK: - Outlets and members
+    @IBOutlet weak var containerView: UIView!
     
     // MARK: - Actions and methods
     @IBAction func signOut(_ sender: Any) {
         try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "segueToAdminView", sender: nil)
+        performSegue(withIdentifier: "unwindToAdminLogin", sender: nil)
     }
     
     @IBAction func closeView(_ sender: Any) {

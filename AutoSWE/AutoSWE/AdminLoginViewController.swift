@@ -44,6 +44,7 @@ class AdminLoginViewController: UIViewController {
                 else{
                     self.userUid = (user?.uid)!
                     self.performSegue(withIdentifier: "segueToLoading", sender: nil)
+                    self.clearTextFields()
                 }
             }
         }
@@ -57,7 +58,7 @@ class AdminLoginViewController: UIViewController {
         performSegue(withIdentifier: "segueToSignUp", sender: nil)
     }
     
-    @IBAction func unwindSegue(_ unwindSegue: UIStoryboardSegue){
+    @IBAction func unwindToAdminLogin(_ unwindSegue: UIStoryboardSegue){
     }
     
     override func viewDidLoad() {
@@ -72,5 +73,10 @@ class AdminLoginViewController: UIViewController {
             let destinationController = segue.destination as! LoadingViewController
             destinationController.userUid = self.userUid
         }
+    }
+    
+    func clearTextFields() {
+        passwordTextField.text = ""
+        errorLabel.isHidden = true
     }
 }
