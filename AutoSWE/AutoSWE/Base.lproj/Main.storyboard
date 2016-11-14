@@ -335,7 +335,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pn-DU-tHa" id="e7Q-r8-ode">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -413,11 +413,25 @@
                                             <action selector="closeView:" destination="rdm-tn-8JU" eventType="touchUpInside" id="vwh-9P-WJq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxG-tb-5f7">
+                                        <rect key="frame" x="8" y="8" width="55" height="30"/>
+                                        <color key="backgroundColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="LKY-Cp-gSZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Create">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createSurvey:" destination="rdm-tn-8JU" eventType="touchUpInside" id="kRt-kB-7aj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="lBb-wd-W1B" firstAttribute="top" secondItem="9kR-Di-WVH" secondAttribute="topMargin" id="3PX-FA-gKM"/>
+                                    <constraint firstItem="HxG-tb-5f7" firstAttribute="top" secondItem="lBb-wd-W1B" secondAttribute="top" id="7V6-Kc-uA3"/>
                                     <constraint firstItem="G2Q-vJ-pcm" firstAttribute="top" secondItem="gZB-35-AJk" secondAttribute="bottom" constant="8" symbolic="YES" id="9TN-UN-6XY"/>
                                     <constraint firstAttribute="bottom" secondItem="gZB-35-AJk" secondAttribute="bottom" constant="53" id="C8h-0p-u41"/>
                                     <constraint firstItem="gZB-35-AJk" firstAttribute="centerX" secondItem="G2Q-vJ-pcm" secondAttribute="centerX" id="CDP-eQ-aLe"/>
@@ -426,6 +440,7 @@
                                     <constraint firstItem="gZB-35-AJk" firstAttribute="centerX" secondItem="9kR-Di-WVH" secondAttribute="centerX" id="Pgm-Yo-MZQ"/>
                                     <constraint firstItem="mCc-vc-BUa" firstAttribute="leading" secondItem="gZB-35-AJk" secondAttribute="leading" id="RCw-Kg-hAO"/>
                                     <constraint firstItem="gZB-35-AJk" firstAttribute="leading" secondItem="9kR-Di-WVH" secondAttribute="leading" constant="50" id="dDK-3G-KFP"/>
+                                    <constraint firstItem="HxG-tb-5f7" firstAttribute="leading" secondItem="9kR-Di-WVH" secondAttribute="leadingMargin" id="eKK-Ig-tkc"/>
                                     <constraint firstItem="mCc-vc-BUa" firstAttribute="top" secondItem="lBb-wd-W1B" secondAttribute="bottom" constant="8" symbolic="YES" id="en5-Ax-CSq"/>
                                     <constraint firstItem="gZB-35-AJk" firstAttribute="top" secondItem="mCc-vc-BUa" secondAttribute="bottom" constant="41" id="h5y-Zn-q4K"/>
                                     <constraint firstItem="mCc-vc-BUa" firstAttribute="trailing" secondItem="gZB-35-AJk" secondAttribute="trailing" id="n21-qz-wii"/>
@@ -444,11 +459,41 @@
                         <outlet property="pageControl" destination="G2Q-vJ-pcm" id="Fzg-mt-BwM"/>
                         <outlet property="templateImageView" destination="gZB-35-AJk" id="vJh-4D-BVr"/>
                         <outlet property="templateNameLabel" destination="mCc-vc-BUa" id="j3y-uQ-4PM"/>
+                        <segue destination="LrZ-zy-2NF" kind="show" identifier="segueToSurveyBuilder" id="neF-UI-qz8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbU-ZJ-UkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2764" y="492.50374812593708"/>
+        </scene>
+        <!--Survey Builder View Controller-->
+        <scene sceneID="GkE-8g-eMb">
+            <objects>
+                <viewController id="LrZ-zy-2NF" customClass="SurveyBuilderViewController" customModule="AutoSWE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Er-9w-6jA"/>
+                        <viewControllerLayoutGuide type="bottom" id="EFt-Tq-JYe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="66M-2L-3KT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp8-1e-Tlu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jp8-1e-Tlu" firstAttribute="leading" secondItem="66M-2L-3KT" secondAttribute="leading" id="SSF-CH-KiK"/>
+                            <constraint firstItem="Jp8-1e-Tlu" firstAttribute="top" secondItem="66M-2L-3KT" secondAttribute="top" id="bnz-3Q-FhE"/>
+                            <constraint firstItem="Jp8-1e-Tlu" firstAttribute="bottom" secondItem="EFt-Tq-JYe" secondAttribute="top" id="hPU-7j-A1h"/>
+                            <constraint firstAttribute="trailing" secondItem="Jp8-1e-Tlu" secondAttribute="trailing" id="ocB-a3-xil"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N49-lR-P4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3488.8000000000002" y="492.50374812593708"/>
         </scene>
         <!--Profile Options View Controller-->
         <scene sceneID="RmU-Nm-ngn">

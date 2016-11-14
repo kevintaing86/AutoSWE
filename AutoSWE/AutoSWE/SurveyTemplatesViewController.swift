@@ -22,6 +22,10 @@ class SurveyTemplatesViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func createSurvey(_ sender: Any) {
+        performSegue(withIdentifier: "segueToSurveyBuilder", sender: nil)
+    }
+    
     func changePageControl(swipeGesture: UISwipeGestureRecognizer) {
         switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.left:
@@ -51,6 +55,9 @@ class SurveyTemplatesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        containerView.layer.cornerRadius = 4.0
+        templateImageView.layer.cornerRadius = 8.0
+        
         let leftSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SurveyTemplatesViewController .changePageControl(swipeGesture:)))
         let rightSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SurveyTemplatesViewController .changePageControl(swipeGesture:)))
         leftSwipe.direction = UISwipeGestureRecognizerDirection.left
