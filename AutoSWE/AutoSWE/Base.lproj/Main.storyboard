@@ -478,18 +478,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp8-1e-Tlu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="event title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jgn-2m-Jbh">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQH-Y8-a8n">
+                                <rect key="frame" x="0.0" y="78" width="375" height="581"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XA6-Vw-zgQ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XA6-Vw-zgQ" id="GEs-z8-6Nh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LrZ-zy-2NF" id="Okj-kd-S6W"/>
+                                    <outlet property="delegate" destination="LrZ-zy-2NF" id="Cod-Hu-5ah"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jp8-1e-Tlu" firstAttribute="leading" secondItem="66M-2L-3KT" secondAttribute="leading" id="SSF-CH-KiK"/>
-                            <constraint firstItem="Jp8-1e-Tlu" firstAttribute="top" secondItem="66M-2L-3KT" secondAttribute="top" id="bnz-3Q-FhE"/>
-                            <constraint firstItem="Jp8-1e-Tlu" firstAttribute="bottom" secondItem="EFt-Tq-JYe" secondAttribute="top" id="hPU-7j-A1h"/>
-                            <constraint firstAttribute="trailing" secondItem="Jp8-1e-Tlu" secondAttribute="trailing" id="ocB-a3-xil"/>
+                            <constraint firstItem="jgn-2m-Jbh" firstAttribute="centerX" secondItem="RQH-Y8-a8n" secondAttribute="centerX" id="4W1-Uh-AVN"/>
+                            <constraint firstItem="jgn-2m-Jbh" firstAttribute="trailing" secondItem="66M-2L-3KT" secondAttribute="trailingMargin" id="BZg-gE-dkK"/>
+                            <constraint firstItem="EFt-Tq-JYe" firstAttribute="top" secondItem="RQH-Y8-a8n" secondAttribute="bottom" constant="8" symbolic="YES" id="ahj-si-D09"/>
+                            <constraint firstItem="jgn-2m-Jbh" firstAttribute="top" secondItem="4Er-9w-6jA" secondAttribute="bottom" constant="8" symbolic="YES" id="dv4-8B-jM0"/>
+                            <constraint firstItem="jgn-2m-Jbh" firstAttribute="leading" secondItem="66M-2L-3KT" secondAttribute="leadingMargin" id="e1H-Xe-TC4"/>
+                            <constraint firstItem="RQH-Y8-a8n" firstAttribute="leading" secondItem="66M-2L-3KT" secondAttribute="leading" id="gdv-WY-J4D"/>
+                            <constraint firstItem="RQH-Y8-a8n" firstAttribute="top" secondItem="jgn-2m-Jbh" secondAttribute="bottom" constant="20" id="zY9-RZ-hfO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventTitleField" destination="jgn-2m-Jbh" id="ir0-Ix-YkT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N49-lR-P4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

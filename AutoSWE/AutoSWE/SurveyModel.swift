@@ -10,3 +10,21 @@ import Foundation
 import UIKit
 
 var Survey_Templates: [UIImage] = [UIImage(named: "Student_Survey")!, UIImage(named: "Adult_Survey")!, UIImage(named: "Volunteer_Survey")!]
+
+var StudentSurvey: [Question] = []
+
+
+
+
+
+
+
+
+
+
+
+
+struct Question {
+    var title: String
+    var answers: [String]
+}

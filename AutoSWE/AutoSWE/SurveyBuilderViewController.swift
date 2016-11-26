@@ -8,14 +8,25 @@
 
 import UIKit
 
-class SurveyBuilderViewController: UIViewController {
+class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Outlets and memebers
     var pageConrolIndex: Int!
+    @IBOutlet weak var eventTitleField: UITextField!
     
     // MARK: - Actions and methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let sureyType = Survey_Templates[pageConrolIndex]
+    }
+    
+   // table view delegate and data source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
     }
 }
