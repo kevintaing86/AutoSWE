@@ -16,17 +16,24 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - Actions and methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let sureyType = Survey_Templates[pageConrolIndex]
     }
     
    // table view delegate and data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if(pageConrolIndex == 1){
+            return StudentSurvey.template().count
+        }
+        else{
+            return 0
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
+        cell.textLabel?.text = "blah"
+        
+        return cell
     }
 }
