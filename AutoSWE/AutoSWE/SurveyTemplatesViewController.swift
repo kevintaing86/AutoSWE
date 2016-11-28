@@ -53,6 +53,13 @@ class SurveyTemplatesViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueToSurveyBuilder"){
+            let temp = segue.destination as! SurveyBuilderViewController
+            temp.pageConrolIndex = pageControl.currentPage
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         containerView.layer.cornerRadius = 4.0
