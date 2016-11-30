@@ -11,17 +11,41 @@ import UIKit
 class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Outlets and memebers
     var pageConrolIndex: Int!
+    var customSurvey: [Question]!
     @IBOutlet weak var eventTitleField: UITextField!
     
     // MARK: - Actions and methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        surveyType()
+        self.dismissKeyboard()
+    }
+    
+    @IBAction func saveSurvey(_ sender: Any) {
+    }
+    
+    func surveyType() {
+        switch pageConrolIndex{
+        case 0:
+            customSurvey = StudentSurvey.template()
+            break
+        case 1:
+            break
+        case 2:
+            break
+        default:
+            break
+        }
     }
     
    // table view delegate and data source
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(pageConrolIndex == 1){
-            return StudentSurvey.template().count
+        if(pageConrolIndex == 0){
+            return customSurvey.count
         }
         else{
             return 0
@@ -32,8 +56,24 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
-        cell.textLabel?.text = "blah"
+        cell.textLabel?.text = customSurvey[indexPath.row].title
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if(editingStyle == .delete){
+            customSurvey.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
+
+
+
+
