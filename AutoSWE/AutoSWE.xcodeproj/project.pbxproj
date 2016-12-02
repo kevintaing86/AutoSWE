@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A11FA17A1DA46E6A0093D866 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */; };
+		A120596B1DF1CEB7002B406B /* QuestionBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A120596A1DF1CEB7002B406B /* QuestionBuilderViewController.swift */; };
 		A12B7F4C1DD0E57200319D5A /* ProfileOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */; };
 		A14522CA1D8059ED0023E30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14522C91D8059ED0023E30D /* AppDelegate.swift */; };
 		A14522CF1D8059ED0023E30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14522CD1D8059ED0023E30D /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		A120596A1DF1CEB7002B406B /* QuestionBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBuilderViewController.swift; sourceTree = "<group>"; };
 		A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileOptionsViewController.swift; sourceTree = "<group>"; };
 		A14522C61D8059ED0023E30D /* AutoSWE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoSWE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14522C91D8059ED0023E30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */,
 				A180E9351DD3AB120043FDF0 /* SurveyTemplatesViewController.swift */,
 				A1467B081DDA22CA00F1C2CC /* SurveyBuilderViewController.swift */,
+				A120596A1DF1CEB7002B406B /* QuestionBuilderViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A120596B1DF1CEB7002B406B /* QuestionBuilderViewController.swift in Sources */,
 				A1D0AE641DD2E31600864EF3 /* SurveyModel.swift in Sources */,
 				A11FA17A1DA46E6A0093D866 /* LoadingViewController.swift in Sources */,
 				A1467B091DDA22CA00F1C2CC /* SurveyBuilderViewController.swift in Sources */,
