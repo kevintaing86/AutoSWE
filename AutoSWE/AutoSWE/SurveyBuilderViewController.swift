@@ -12,6 +12,7 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - Outlets and memebers
     var pageConrolIndex: Int!
     var customSurvey: [Question]!
+    var selectedQuestion: Question?
     @IBOutlet weak var eventTitleField: UITextField!
     
     // MARK: - Actions and methods
@@ -22,6 +23,9 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func saveSurvey(_ sender: Any) {
+    }
+    
+    @IBAction func unwindToSurveyBuilder(_ unwindSegue: UIStoryboardSegue){
     }
     
     func surveyType() {
@@ -35,6 +39,13 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
             break
         default:
             break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueToQuestionBuilder"){
+            let vc = segue.destination as! QuestionBuilderViewController
+            vc.question = selectedQuestion
         }
     }
     
@@ -62,7 +73,6 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
         if(editingStyle == .delete){
             customSurvey.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -70,7 +80,8 @@ class SurveyBuilderViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedQuestion = customSurvey[indexPath.row]
+        performSegue(withIdentifier: "segueToQuestionBuilder", sender: nil)
     }
 }
 
