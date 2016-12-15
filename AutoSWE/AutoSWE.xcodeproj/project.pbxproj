@@ -10,6 +10,7 @@
 		A11FA17A1DA46E6A0093D866 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */; };
 		A120596B1DF1CEB7002B406B /* QuestionBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A120596A1DF1CEB7002B406B /* QuestionBuilderViewController.swift */; };
 		A12B7F4C1DD0E57200319D5A /* ProfileOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */; };
+		A140235F1E025B3F00A7D918 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A140235E1E025B3F00A7D918 /* .gitignore */; };
 		A14522CA1D8059ED0023E30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14522C91D8059ED0023E30D /* AppDelegate.swift */; };
 		A14522CF1D8059ED0023E30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14522CD1D8059ED0023E30D /* Main.storyboard */; };
 		A14522D11D8059ED0023E30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14522D01D8059ED0023E30D /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		A11FA1791DA46E6A0093D866 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A120596A1DF1CEB7002B406B /* QuestionBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBuilderViewController.swift; sourceTree = "<group>"; };
 		A12B7F4B1DD0E57200319D5A /* ProfileOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileOptionsViewController.swift; sourceTree = "<group>"; };
+		A140235E1E025B3F00A7D918 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A14522C61D8059ED0023E30D /* AutoSWE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoSWE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14522C91D8059ED0023E30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A14522CE1D8059ED0023E30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		A14522BD1D8059ED0023E30D = {
 			isa = PBXGroup;
 			children = (
+				A140235E1E025B3F00A7D918 /* .gitignore */,
 				A14522C81D8059ED0023E30D /* AutoSWE */,
 				A14522C71D8059ED0023E30D /* Products */,
 				13744B1AB3579137D2900453 /* Pods */,
@@ -221,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A140235F1E025B3F00A7D918 /* .gitignore in Resources */,
 				A14522D41D8059ED0023E30D /* LaunchScreen.storyboard in Resources */,
 				A162B5C91D903756007E534B /* GoogleService-Info.plist in Resources */,
 				A14522D11D8059ED0023E30D /* Assets.xcassets in Resources */,
